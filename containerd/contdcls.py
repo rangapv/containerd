@@ -307,13 +307,14 @@ class Action2:
          return self.f 
     #     self.function(self, option_strings, dest, nargs=None, **kwargs)
 
+#@classmethod
 class Action1(argparse.Action):
 
      def __init__(self, option_strings, dest, nargs=None, **kwargs):
          #print("inside action1")
-         if nargs is not None:
+        if nargs is not None:
              raise ValueError("nargs not allowed")
-         super(Action1, self).__init__(option_strings, dest, **kwargs)
+        super(Action1, self).__init__(option_strings, dest, **kwargs)
 
      def __call__(self, parser, namespace, values, option_string=None):
          print('%r %r %r %r' % (namespace, values, option_string, parser))
